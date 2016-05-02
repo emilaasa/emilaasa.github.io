@@ -2,6 +2,7 @@
 layout: default
 ---
 
+### Tight feedback loop, TypeScript and Karma
 
 
 ### Angular 2 day 1
