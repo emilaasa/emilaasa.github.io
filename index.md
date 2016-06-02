@@ -2,16 +2,7 @@
 layout: default
 ---
 
-### Tight feedback loop, TypeScript and Karma
-
-
-### Angular 2 day 1
-[https://github.com/angular/quickstart](angular quickstart)
-
-1. Installed quickstart
-2. Started tutorial
-
-> WebStorm works nicely with Angular 2!
+### Reactive Angular 2 from the ground up
 
 <!--
 ### Syntax reminders
