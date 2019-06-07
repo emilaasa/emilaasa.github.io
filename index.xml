@@ -17,8 +17,8 @@
       <pubDate>Sun, 02 Jun 2019 21:02:01 +0200</pubDate>
       
       <guid>https://aasa.dev/posts/initial-commit/</guid>
-      <description>Blog efficently Setup I wanted to create a workflow for writing in public with ease.
-My requirements are: 1. Control the whole process from the command line 2. Write in markdown 3. A very fast site 4. No manual management over servers 5. Custom domain name
+      <description>Blog efficently - workflow for writing in public with ease.
+Setup My requirements are: 1. Control the whole process from the command line 2. Write in markdown 3. A very fast site 4. No manual management over servers 5. Custom domain name
 Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
 Hugo also pretty simply supports rendering on github pages: https://gohugo.</description>
     </item>
