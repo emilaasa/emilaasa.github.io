@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Initial commit - Engineering log</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Initial commit" />
+<meta property="og:description" content="Blog efficently Setup I wanted to create a workflow for writing in public with ease.
+My requirements are: 1. Control the whole process from the command line 2. Write in markdown 3. A very fast site 4. No manual management over servers 5. Custom domain name
+Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
+Hugo also pretty simply supports rendering on github pages: https://gohugo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aasa.dev/posts/initial-commit/" />
+<meta property="article:published_time" content="2019-06-02T21:02:01&#43;02:00"/>
+<meta property="article:modified_time" content="2019-06-02T21:02:01&#43;02:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Initial commit"/>
+<meta name="twitter:description" content="Blog efficently Setup I wanted to create a workflow for writing in public with ease.
+My requirements are: 1. Control the whole process from the command line 2. Write in markdown 3. A very fast site 4. No manual management over servers 5. Custom domain name
+Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
+Hugo also pretty simply supports rendering on github pages: https://gohugo."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">Engineering log</h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Initial commit</h1>
+			<div class="meta">Posted at &mdash; Jun 2, 2019</div>
+		</div>
+
+		<div class="markdown">
+			
+
+<h2 id="blog-efficently">Blog efficently</h2>
+
+<h2 id="setup">Setup</h2>
+
+<p>I wanted to create a workflow for writing in public with ease.</p>
+
+<p>My requirements are:
+1. Control the whole process from the command line
+2. Write in markdown
+3. A very fast site
+4. No manual management over servers
+5. Custom domain name</p>
+
+<p>Requirements 1-3 are easily satisfied by <a href="https://gohugo.io">hugo</a>. I also
+like the API of hugo, which I will go over in another post.</p>
+
+<p>Hugo also pretty simply supports rendering on <a href="https://pages.github.com">github pages</a>:
+<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
+
+<h2 id="cli-deployment">CLI deployment</h2>
+
+<p><em>Quoted from <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></em></p>
+
+<ul>
+<li>Create a <YOUR-PROJECT> (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files.
+Create a <USERNAME>.github.io GitHub repository. This is the repository that will contain the fully rendered version of your Hugo website.
+git clone <YOUR-PROJECT-URL> &amp;&amp; cd <YOUR-PROJECT></li>
+</ul>
+
+<p>Make your website work locally (hugo server or hugo server -t <YOURTHEME>) and open your browser to <a href="http://localhost:1313">http://localhost:1313</a>.
+Once you are happy with the results:
+Press Ctrl+C to kill the server</p>
+
+<p><code>rm -rf public</code> to completely remove the public directory
+<code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>. This creates a git submodule. Now when you run the hugo command to build your site to public, the created public directory will have a different remote origin (i.e. hosted GitHub repository). You can automate some of these steps with the following script.</p>
+
+<h2 id="dns-setup">DNS Setup</h2>
+
+<p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages</a></p>
+
+<h2 id="the-workflow">The workflow</h2>
+
+<p><code>hugo new posts/intial-commit.md</code></p>
+
+<p>In a background terminal or tmux pane, start the hugo local server process:<br />
+<code>hugo server -D</code><br />
+Now open <code>http://localhost:1313</code> for a preview of the blog.</p>
+
+<p>I do my editing with vim, and one of the best things with Markdown is not having
+to flip back and forth between the browser and the text editor, except when
+checking image layout and the like.</p>
+
+		</div><div id="disqus_thread"></div>
+<script type="text/javascript">
+	<!-- (function () { -->
+	<!-- 	
+	<!-- 	
+	<!-- 	if (window.location.hostname == "localhost") -->
+	<!-- 		return; -->
+
+	<!-- 	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; -->
+	<!-- 	var disqus_shortname = ''; -->
+	<!-- 	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; -->
+	<!-- 	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); -->
+	<!-- })(); -->
+</script>
+
+
+
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		
+	</nav>
+</div>
+
+</body>
+</html>
