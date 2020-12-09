@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Engineering log</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Posts on Engineering log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2019 21:02:01 +0200</lastBuildDate>
-    
-	<atom:link href="https://aasa.dev/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Jun 2019 21:02:01 +0200</lastBuildDate><atom:link href="https://aasa.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Initial commit</title>
       <link>https://aasa.dev/posts/initial-commit/</link>
@@ -18,8 +14,8 @@
       
       <guid>https://aasa.dev/posts/initial-commit/</guid>
       <description>Blog efficently - workflow for writing in public with ease.
-Setup My requirements are: 1. Control the whole process from the command line 2. Write in markdown 3. A very fast site 4. No manual management over servers 5. Custom domain name
-Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
+Setup My requirements are:
+ Control the whole process from the command line Write in markdown A very fast site No manual management over servers Custom domain name  Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
 Hugo also pretty simply supports rendering on github pages: https://gohugo.</description>
     </item>
     
