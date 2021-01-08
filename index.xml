@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Engineering log</title>
+    <title>Public learning log</title>
     <link>https://aasa.dev/</link>
-    <description>Recent content on Engineering log</description>
+    <description>Recent content on Public learning log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Jun 2019 21:02:01 +0200</lastBuildDate><atom:link href="https://aasa.dev/index.xml" rel="self" type="application/rss+xml" />
