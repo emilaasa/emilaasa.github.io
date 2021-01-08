@@ -6,8 +6,10 @@
 	<meta property="og:title" content="Initial commit" />
 <meta property="og:description" content="Blog efficently - workflow for writing in public with ease.
 Setup My requirements are:
- Control the whole process from the command line Write in markdown A very fast site No manual management over servers Custom domain name  Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
-Hugo also pretty simply supports rendering on github pages: https://gohugo." />
+ Control the whole process from the command line Write in markdown No server management Custom domain name  Requirements 1-3 are easily satisfied by hugo.
+Hugo supports rendering on github pages: https://gohugo.io/hosting-and-deployment/hosting-on-github/
+CLI deployment Quoted from https://gohugo.io/hosting-and-deployment/hosting-on-github/
+ Create a (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files. Create a ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://aasa.dev/posts/initial-commit/" />
 <meta property="article:published_time" content="2019-06-02T21:02:01+02:00" />
@@ -16,8 +18,10 @@ Hugo also pretty simply supports rendering on github pages: https://gohugo." />
 <meta name="twitter:title" content="Initial commit"/>
 <meta name="twitter:description" content="Blog efficently - workflow for writing in public with ease.
 Setup My requirements are:
- Control the whole process from the command line Write in markdown A very fast site No manual management over servers Custom domain name  Requirements 1-3 are easily satisfied by hugo. I also like the API of hugo, which I will go over in another post.
-Hugo also pretty simply supports rendering on github pages: https://gohugo."/>
+ Control the whole process from the command line Write in markdown No server management Custom domain name  Requirements 1-3 are easily satisfied by hugo.
+Hugo supports rendering on github pages: https://gohugo.io/hosting-and-deployment/hosting-on-github/
+CLI deployment Quoted from https://gohugo.io/hosting-and-deployment/hosting-on-github/
+ Create a (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files. Create a ."/>
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
@@ -53,26 +57,26 @@ Hugo also pretty simply supports rendering on github pages: https://gohugo."/>
 <ol>
 <li>Control the whole process from the command line</li>
 <li>Write in markdown</li>
-<li>A very fast site</li>
-<li>No manual management over servers</li>
+<li>No server management</li>
 <li>Custom domain name</li>
 </ol>
-<p>Requirements 1-3 are easily satisfied by <a href="https://gohugo.io">hugo</a>. I also
-like the API of hugo, which I will go over in another post.</p>
-<p>Hugo also pretty simply supports rendering on <a href="https://pages.github.com">github pages</a>:
+<p>Requirements 1-3 are easily satisfied by <a href="https://gohugo.io">hugo</a>.</p>
+<p>Hugo supports rendering on <a href="https://pages.github.com">github pages</a>:
 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
 <h2 id="cli-deployment">CLI deployment</h2>
-<p>_Quoted from <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/_">https://gohugo.io/hosting-and-deployment/hosting-on-github/_</a></p>
+<p>Quoted from <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">https://gohugo.io/hosting-and-deployment/hosting-on-github/</a></p>
 <ul>
-<li>Create a <!-- raw HTML omitted --> (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files.
-Create a <!-- raw HTML omitted -->.github.io GitHub repository. This is the repository that will contain the fully rendered version of your Hugo website.
-git clone <!-- raw HTML omitted --> &amp;&amp; cd <!-- raw HTML omitted --></li>
+<li>Create a <!-- raw HTML omitted --> (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files.</li>
+<li>Create a <!-- raw HTML omitted -->.github.io GitHub repository. This is the repository that will contain the fully rendered version of your Hugo website.</li>
+<li>git clone <!-- raw HTML omitted --> &amp;&amp; cd <!-- raw HTML omitted --></li>
 </ul>
 <p>Make your website work locally (hugo server or hugo server -t <!-- raw HTML omitted -->) and open your browser to http://localhost:1313.
 Once you are happy with the results:
 Press Ctrl+C to kill the server</p>
-<p><code>rm -rf public</code> to completely remove the public directory
-<code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>. This creates a git submodule. Now when you run the hugo command to build your site to public, the created public directory will have a different remote origin (i.e. hosted GitHub repository). You can automate some of these steps with the following script.</p>
+<ul>
+<li><code>rm -rf public</code> to completely remove the public directory</li>
+<li><code>git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public</code>. This creates a git submodule. Now when you run the hugo command to build your site to public, the created public directory will have a different remote origin (i.e. hosted GitHub repository).</li>
+</ul>
 <h2 id="dns-setup">DNS Setup</h2>
 <p><a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages</a></p>
 <h2 id="the-workflow">The workflow</h2>
