@@ -22,16 +22,20 @@ Setup My requirements are:
 Hugo supports rendering on github pages: https://gohugo.io/hosting-and-deployment/hosting-on-github/
 CLI deployment Quoted from https://gohugo.io/hosting-and-deployment/hosting-on-github/
  Create a (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files. Create a ."/>
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:500,100,300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="/js/main.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://aasa.dev/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://aasa.dev/css/main.css" />
+
+	
+	<script src="https://aasa.dev/js/main.js"></script>
 </head>
 
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<h1 class="site-title">Public learning log</h1>
+	<base href="https://aasa.dev/">
+	<h1 class="site-title"><a href="https://aasa.dev/">Public learning log</a></h1>
 	<div class="site-description"><nav class="nav social">
 			<ul class="flat"></ul>
 		</nav>
@@ -88,29 +92,21 @@ Now open <code>http://localhost:1313</code> for a preview of the blog.</p>
 to flip back and forth between the browser and the text editor, except when
 checking image layout and the like.</p>
 
-		</div><div id="disqus_thread"></div>
-<script type="text/javascript">
-	<!-- (function () { -->
-	<!-- 	
-	<!-- 	
-	<!-- 	if (window.location.hostname == "localhost") -->
-	<!-- 		return; -->
+		</div>
 
-	<!-- 	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; -->
-	<!-- 	var disqus_shortname = ''; -->
-	<!-- 	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; -->
-	<!-- 	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); -->
-	<!-- })(); -->
-</script>
-
-
-
-</div>
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
 	<div class="footer wrapper">
 	<nav class="nav">
-		
 	</nav>
 </div>
+
+
+
 
 </body>
 </html>
