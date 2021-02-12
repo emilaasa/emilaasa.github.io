@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Public learning log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2019 21:02:01 +0200</lastBuildDate><atom:link href="https://aasa.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Feb 2021 14:09:35 +0100</lastBuildDate><atom:link href="https://aasa.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Plantuml</title>
+      <link>https://aasa.dev/posts/vim-plantuml/</link>
+      <pubDate>Fri, 12 Feb 2021 14:09:35 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/vim-plantuml/</guid>
+      <description>Workflow: :PlantumlOpen
+Required plugins:
+Plug &amp;#39;aklt/plantuml-syntax&amp;#39; &amp;#34; syntax hl for pumlPlug &amp;#39;tyru/open-browser.vim&amp;#39; &amp;#34; hooks for opeing browserPlug &amp;#39;weirongxu/plantuml-previewer.vim&amp;#39; &amp;#34; previewerResources:
+ Plantuml Hitchhikers Guide  </description>
+    </item>
+    
     <item>
       <title>Initial commit</title>
       <link>https://aasa.dev/posts/initial-commit/</link>
