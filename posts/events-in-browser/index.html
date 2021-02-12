@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	
+	<meta name="generator" content="Hugo 0.78.2" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<meta property="og:title" content="Events in Browser">
+	
+	
+	<meta property="og:title" content="Events in Browser" />
+<meta property="og:description" content="What we tried
+grpc web streaming
+grpc streams are shit why
+polling rocks
+what we should maybe try instead
+stomp roll ur own
+experiments
+Streaming RPCs (Unary)11MsgMethod&#43;HeadersHalf closeClientServerMsgStatus&#43;TrailersHeaders
+Streaming RPCs (Streaming)12MsgMsgMsgMethod&#43;HeadersHalf closeClientServerMsgMsgMsgStatus&#43;TrailersHeaders Streaming RPCsrpc UnaryCall (Request) returns (Response);rpc ClientStreamingCall(stream Request) returns (Response);rpc ServerStreamingCall (Request) returns (stream Response);rpc BidirectionalCall(stream Request) returns (stream Response);13
+Streaming RPCs14Bidirectional (Bidi) Streaming
+ Half duplex. Client-streaming &#43; Server-streaming Full duplex. More that one side can send at a time Like TCP, but with messages instead of bytes(close semantics are a bit different, though) No implicit acks; writes are only acked by responses  OverviewLong-lived RPCsStreaming RPCs" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aasa.dev/posts/events-in-browser/" />
+<meta property="article:published_time" content="2020-10-26T07:54:33+01:00" />
+<meta property="article:modified_time" content="2020-10-26T07:54:33+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Events in Browser"/>
+<meta name="twitter:description" content="What we tried
+grpc web streaming
+grpc streams are shit why
+polling rocks
+what we should maybe try instead
+stomp roll ur own
+experiments
+Streaming RPCs (Unary)11MsgMethod&#43;HeadersHalf closeClientServerMsgStatus&#43;TrailersHeaders
+Streaming RPCs (Streaming)12MsgMsgMsgMethod&#43;HeadersHalf closeClientServerMsgMsgMsgStatus&#43;TrailersHeaders Streaming RPCsrpc UnaryCall (Request) returns (Response);rpc ClientStreamingCall(stream Request) returns (Response);rpc ServerStreamingCall (Request) returns (stream Response);rpc BidirectionalCall(stream Request) returns (stream Response);13
+Streaming RPCs14Bidirectional (Bidi) Streaming
+ Half duplex. Client-streaming &#43; Server-streaming Full duplex. More that one side can send at a time Like TCP, but with messages instead of bytes(close semantics are a bit different, though) No implicit acks; writes are only acked by responses  OverviewLong-lived RPCsStreaming RPCs"/>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/all.css" />
+	<title>Events in Browser | Learn in public</title></head>
+<body><header>
+	
+	<div id="titletext"><h2 id="title"><a href="https://aasa.dev/">Learn in public</a></h2></div>
+	<div id="title-description"><div id="social">
+			<nav>
+				<ul></ul>
+			</nav>
+		</div>
+	</div>
+	
+</header>
+<main><div class="post">
+	
+	<div class="author">
+	
+	</div>
+	<div class="post-header">
+	
+		<div class="meta">
+			
+			<div class="date">
+				<span class="day">26</span>
+				<span class="rest">Oct 2020</span>
+			</div>
+			
+		</div>
+		
+		<div class="matter">
+			<h1 class="title">Events in Browser</h1>
+		</div>
+	</div>
+	<div class="markdown">
+		<p>What we tried</p>
+<p>grpc web streaming</p>
+<p>grpc streams are shit
+why</p>
+<p>polling rocks</p>
+<p>what we should maybe try instead</p>
+<p>stomp
+roll ur own</p>
+<p>experiments</p>
+<p>Streaming RPCs (Unary)11MsgMethod+HeadersHalf closeClientServerMsgStatus+TrailersHeaders</p>
+<p>Streaming RPCs (Streaming)12MsgMsgMsgMethod+HeadersHalf closeClientServerMsgMsgMsgStatus+TrailersHeaders
+Streaming RPCsrpc           UnaryCall       (Request) returns        (Response);rpc ClientStreamingCall(stream Request) returns        (Response);rpc ServerStreamingCall       (Request) returns (stream Response);rpc   BidirectionalCall(stream Request) returns (stream Response);13</p>
+<p>Streaming RPCs14Bidirectional (Bidi) Streaming</p>
+<ul>
+<li>Half duplex. Client-streaming + Server-streaming</li>
+<li>Full duplex. More that one side can send at a time</li>
+<li>Like TCP, but with messages instead of bytes(close semantics are a bit different, though)</li>
+<li>No implicit acks; writes are only acked by responses</li>
+</ul>
+<p>OverviewLong-lived RPCsStreaming RPCs</p>
+<ul>
+<li>Half Duplex</li>
+<li>Full DuplexLong-lived Streaming RPCs15</li>
+</ul>
+<h1 id="half-duplex-streaming-use-cases">Half-duplex Streaming Use-cases</h1>
+<ul>
+<li>
+<p>Latency or memory reduction (e.g., speech to text)</p>
+</li>
+<li>
+<p>multiple small messages instead of a big message</p>
+</li>
+<li>
+<p>Separation of response and “end of call” (e.g., watches)</p>
+</li>
+<li>
+<p>Flow Control (“push-back”)</p>
+</li>
+<li>
+<p>Bulk uploads without needing to optimize chunk sizes</p>
+</li>
+<li>
+<p>Less “jerky” than one-at-a-time chunking (gives “pipelining”</p>
+</li>
+<li>
+<p>Pinning to a backend</p>
+</li>
+<li>
+<p>Expands call lifetime (e.g., transactions)</p>
+</li>
+<li>
+<p>Reduced per-message setup cost (e.g., watches)</p>
+</li>
+<li>
+<p>Full-state followed by deltas (watches again&hellip;)</p>
+</li>
+</ul>
+<h1 id="half-duplex-streaming-issues">Half-duplex Streaming Issues</h1>
+<ul>
+<li>gRPC flow control may have large buffers (64 KB-4 MB)</li>
+<li>gRPC flow control is point-to-point</li>
+<li>Increased API complexity</li>
+<li>Server-streaming may require application-level retries (vs framework-level)</li>
+<li>Tracing/stats muddled or missing</li>
+</ul>
+<h1 id="full-duplex-streaming-use-cases">Full-duplex Streaming Use-cases</h1>
+<ul>
+<li>TCP with messages</li>
+<li>Custom protocols Application-level flow control (e.g., “messages,” “work items”)</li>
+<li>Transactions</li>
+<li>“Live” Reconfiguration</li>
+<li>Bulk uploads, with reduced frequency of resumption</li>
+</ul>
+<h1 id="full-duplex-streaming-issues">Full-duplex Streaming Issues</h1>
+<ul>
+<li>Tracing/stats systems may be overly simplistic</li>
+<li>API/protocol complexity</li>
+<li>Involved application-level retry</li>
+<li>Flow-control-induced deadlocking</li>
+<li>Lack of REST conversion</li>
+</ul>
+<p>Full-duplex Streaming Improvements23Have at least one side be reading at any time</p>
+<ul>
+<li>If mixing control and data messages, use application-level flow control to limit memory usage</li>
+</ul>
+<h1 id="full-duplex-long-lived-streaming-rpcs">Full Duplex Long-lived Streaming RPCs</h1>
+<ul>
+<li>Long-lived Streaming Issues</li>
+<li>Load balancing (memory+cpu)</li>
+<li>Tracing/stats systems may be overly simplistic</li>
+</ul>
+<p><a href="https://stomp.github.io/stomp-specification-1.2.html#Augmented_BNF">https://stomp.github.io/stomp-specification-1.2.html#Augmented_BNF</a></p>
+<p>===== COPIED FROM TWIRP ISSUE =====
+I&rsquo;m sorry for the long silence on this topic. Part of the reason I&rsquo;ve gone
+quiet is just that I&rsquo;ve been focused on other work, but part of it is that I
+have always had my doubts about the suitability of streaming in Twirp, and have
+been grappling with that uncertainty, trying to find a design that maintains
+simplicity.  Streams are a dangerous feature for users</p>
+<p>@peter-edge has expressed my deepest concern extremely well. One of Twirp&rsquo;s
+best features today is that it is very hard to use it badly. You kind of can&rsquo;t
+screw things up too much if you hand it to an inexperienced developer as a tool
+kit. And while you can make mistakes in API design and message design, those
+mistakes stay local: they largely aren&rsquo;t architectural or infrastructural.</p>
+<p>Streams are different. They imply expectations about how connection state is
+managed. Load balancing them is really hard, which means that a decision to use
+streams for an API has ramifications that ripple out to the infrastructure of a
+system. So, streams introduce some architectural risk when recommending Twirp.</p>
+<p>How plausible is it that users trip on that pothole? Unfortunately, I think it
+is quite likely. Streaming is the sort of feature whose downsides can be hard
+to see at first, but it sounds at a glance. &ldquo;Lower latency and the ability to
+push data to the client? Sign me up!&rdquo; But people could easily reach for it too
+early in order to future-proof their APIs, &ldquo;just in case we need streams
+later,&rdquo; and walk themselves into an architectural hole which is very difficult
+to get out of.  Streams are complex and hard to implement well</p>
+<p>In addition, streams add significant complexity to the Twirp project. The alpha
+branch that implements them has to parse protobuf message binary encoding
+directly - it can&rsquo;t really lean on the proto library for fiddly details of the
+encoding, but relies on a few low-level utility functions. This kind of
+terrifies me. I&rsquo;m worried about maintaining something like that, for the health
+of the project.</p>
+<p>It also imposes a much, much heavier burden on implementers in other languages.
+One of the best things about Twirp has been how quick and simple it is to write
+a generator in new languages. We saw Ruby, JavaScript, Java, and Rust
+implementations appear in a matter of days of the project being first released!
+I doubt we would have seen any third party implementations if they needed to do
+low-level manipulation of byte streams to pull out binary-encoded protobuf tag
+numbers.</p>
+<p>The complexity also translates into a clumsy API. It&rsquo;s difficult to do this in
+a general way that feels really ergonomic while covering the many ways a
+streaming connection can break. I am still not thrilled with the Go API we
+designed, and expect that other language implementations would be just as
+difficult to get really right.  Streams are required only rarely</p>
+<p>This is all risk associated with implementing streams. What is the reward, on
+the other side?</p>
+<p>Frankly, at Twitch we have hundreds of Twirp services, and have not once found
+a compelling need for streams. I can think of a small number of backend systems
+that do use streaming communication between a client and server, but all of
+them have extra requirements which make Twirp unusable: some talk to hardware
+appliances or stream video data, which cannot be represented in Protobuf in any
+reasonable way. Some have extreme performance requirements which Twirp doesn&rsquo;t
+aim to meet. None of our designs would work for those niche applications.</p>
+<p>Meanwhile, most simple streaming RPCs can be implemented in terms of
+request-response RPCs, so long as they don&rsquo;t have extreme demands on latency or
+number of open connections (although HTTP/2 request multiplexing mostly
+resolves those issues anyway!). Pagination and polling are the obvious tools
+here, but even algorithms like rsync are surprisingly straightforward to
+implement in a request-response fashion, and probably more efficient than you
+think if you&rsquo;re using http/2, since the transport is streaming anyway.</p>
+<p>Sometimes you really do need streams for your system, like if you are
+replicating a data stream. Nothing else is really going to work, there. But
+Twirp does not need to be all things for all use-cases. There is room for
+specialized solutions, but streams are a special thing, perhaps too specialized
+for Twirp, and they have resounding architectural impact.  Maybe we shouldn&rsquo;t
+do streams</p>
+<p>Given the above, I worry about adding streams to Twirp. I think it would be a
+step in the wrong direction.</p>
+<p>I know others have been relying upon streams already, though, with some
+adventurous souls even using them in production. I&rsquo;d like to better understand
+these use cases. What am I missing in the above analysis?</p>
+<p>(if you&rsquo;d like to reach me in private on this topic, you can also reach me by
+email at <a href="mailto:s@spenczar.com">s@spenczar.com</a>, I&rsquo;m happy to discuss)</p>
+<p>Cross language async shithole</p>
+
+	</div>
+	
+	
+	
+	
+	
+		
+	
+		
+		
+	</div></div>
+
+  </main>
+
+
+
+
+
+</body>
+</html>
