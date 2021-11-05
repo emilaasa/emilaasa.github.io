@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Learning in public</title>
-		<link>https://aasa.dev/</link>
-		<description>Recent content on aasa.dev</description>
-		<generator>Hugo -- gohugo.io</generator>
-		<language>en-us</language>
-		<lastBuildDate>Fri, 12 Feb 2021 14:09:35 +0100</lastBuildDate>
-		
-		<atom:link href="https://aasa.dev/index.xml" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>Using Plantuml from Vim</title>
-			<link>https://aasa.dev/posts/vim-plantuml/</link>
-			<pubDate>Fri, 12 Feb 2021 14:09:35 +0100</pubDate>
-			
-			<guid>https://aasa.dev/posts/vim-plantuml/</guid>
-			<description>
-			
-				Creating diagrams is a great way to communicate with others. Writing in vim is a great way to communicate with yourself.
-Combine them and …
-			
-			</description>
-		</item>
-		<item>
-			<title>Initial commit</title>
-			<link>https://aasa.dev/posts/initial-commit/</link>
-			<pubDate>Sun, 02 Jun 2019 21:02:01 +0200</pubDate>
-			
-			<guid>https://aasa.dev/posts/initial-commit/</guid>
-			<description>
-			
-				Blog efficently - workflow for writing in public with ease.
+  <channel>
+    <title>Learning in public</title>
+    <link>https://aasa.dev/</link>
+    <description>Recent content on Learning in public</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2021 14:09:35 +0100</lastBuildDate><atom:link href="https://aasa.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Plantuml from Vim</title>
+      <link>https://aasa.dev/posts/vim-plantuml/</link>
+      <pubDate>Fri, 12 Feb 2021 14:09:35 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/vim-plantuml/</guid>
+      <description>Creating diagrams is a great way to communicate with others. Writing in vim is a great way to communicate with yourself.
+Combine them and it&amp;rsquo;s just great!
+The resulting workflow: Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
+Pre-requisite software:
+ plantuml  Required plugins:
+Plug &amp;#39;aklt/plantuml-syntax&amp;#39; &amp;#34; syntax hl for pumlPlug &amp;#39;tyru/open-browser.vim&amp;#39; &amp;#34; hooks for opeing browserPlug &amp;#39;weirongxu/plantuml-previewer.vim&amp;#39; &amp;#34; previewerIf you (like me) just love some ascii art, use the entr or similar here:</description>
+    </item>
+    
+    <item>
+      <title>Initial commit</title>
+      <link>https://aasa.dev/posts/initial-commit/</link>
+      <pubDate>Sun, 02 Jun 2019 21:02:01 +0200</pubDate>
+      
+      <guid>https://aasa.dev/posts/initial-commit/</guid>
+      <description>Blog efficently - workflow for writing in public with ease.
 Setup My requirements are:
- Control the whole process from the command line …
-			
-			</description>
-		</item>
-		
-	</channel>
+ Control the whole process from the command line Write in markdown No server management Custom domain name  Requirements 1-3 are easily satisfied by hugo.
+Hugo supports rendering on github pages: https://gohugo.io/hosting-and-deployment/hosting-on-github/
+CLI deployment Quoted from https://gohugo.io/hosting-and-deployment/hosting-on-github/
+ Create a (e.g. blog) repository on GitHub. This repository will contain Hugo’s content and other source files. Create a .</description>
+    </item>
+    
+  </channel>
 </rss>
