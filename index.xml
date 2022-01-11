@@ -22,6 +22,16 @@ Plug &amp;#39;aklt/plantuml-syntax&amp;#39; &amp;#34; syntax hl for pumlPlug &am
     </item>
     
     <item>
+      <title>Til Pipe Into Vim</title>
+      <link>https://aasa.dev/posts/til-pipe-into-vim/</link>
+      <pubDate>Wed, 09 Dec 2020 13:22:11 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/til-pipe-into-vim/</guid>
+      <description>Pipe text into Vim
+docker exec containername cat /etc/nginx/conf.d/nginx.conf | vim - </description>
+    </item>
+    
+    <item>
       <title>Initial commit</title>
       <link>https://aasa.dev/posts/initial-commit/</link>
       <pubDate>Sun, 02 Jun 2019 21:02:01 +0200</pubDate>
