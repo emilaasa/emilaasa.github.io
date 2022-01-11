@@ -32,6 +32,43 @@ docker exec containername cat /etc/nginx/conf.d/nginx.conf | vim - </description
     </item>
     
     <item>
+      <title>Analyzing Disk-IO</title>
+      <link>https://aasa.dev/posts/analyzing-disk-io/</link>
+      <pubDate>Fri, 20 Nov 2020 06:14:41 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/analyzing-disk-io/</guid>
+      <description>Sneaking suspicion </description>
+    </item>
+    
+    <item>
+      <title>Events in Browser</title>
+      <link>https://aasa.dev/posts/events-in-browser/</link>
+      <pubDate>Mon, 26 Oct 2020 07:54:33 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/events-in-browser/</guid>
+      <description>What we tried
+grpc web streaming
+grpc streams are shit why
+polling rocks
+what we should maybe try instead
+stomp roll ur own
+experiments
+Streaming RPCs (Unary)11MsgMethod+HeadersHalf closeClientServerMsgStatus+TrailersHeaders
+Streaming RPCs (Streaming)12MsgMsgMsgMethod+HeadersHalf closeClientServerMsgMsgMsgStatus+TrailersHeaders Streaming RPCsrpc UnaryCall (Request) returns (Response);rpc ClientStreamingCall(stream Request) returns (Response);rpc ServerStreamingCall (Request) returns (stream Response);rpc BidirectionalCall(stream Request) returns (stream Response);13
+Streaming RPCs14Bidirectional (Bidi) Streaming
+ Half duplex. Client-streaming + Server-streaming Full duplex. More that one side can send at a time Like TCP, but with messages instead of bytes(close semantics are a bit different, though) No implicit acks; writes are only acked by responses  OverviewLong-lived RPCsStreaming RPCs</description>
+    </item>
+    
+    <item>
+      <title>Log Aggregation 2019</title>
+      <link>https://aasa.dev/posts/log-aggregation-2019/</link>
+      <pubDate>Fri, 07 Jun 2019 05:45:14 +0200</pubDate>
+      
+      <guid>https://aasa.dev/posts/log-aggregation-2019/</guid>
+      <description>Overview of log aggregation options in 2019.</description>
+    </item>
+    
+    <item>
       <title>Initial commit</title>
       <link>https://aasa.dev/posts/initial-commit/</link>
       <pubDate>Sun, 02 Jun 2019 21:02:01 +0200</pubDate>

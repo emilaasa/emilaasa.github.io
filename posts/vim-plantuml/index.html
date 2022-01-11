@@ -1,80 +1,69 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-	
-	<meta name="generator" content="Hugo 0.78.2" />
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	<meta property="og:title" content="Using Plantuml from Vim">
-	
-	
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Using Plantuml from Vim - Learning in public</title><link rel="icon" type="image/png" href=true /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Creating diagrams is a great way to communicate with others. Writing in vim is a great way to communicate with yourself.
+Combine them and it&rsquo;s just great!
+The resulting workflow: Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
+Pre-requisite software:
+ plantuml  Required plugins:
+Plug &#39;aklt/plantuml-syntax&#39; &#34; syntax hl for pumlPlug &#39;tyru/open-browser.vim&#39; &#34; hooks for opeing browserPlug &#39;weirongxu/plantuml-previewer.vim&#39; &#34; previewerIf you (like me) just love some ascii art, use the entr or similar here:" />
+	<meta property="og:image" content=""/>
 	<meta property="og:title" content="Using Plantuml from Vim" />
 <meta property="og:description" content="Creating diagrams is a great way to communicate with others. Writing in vim is a great way to communicate with yourself.
 Combine them and it&rsquo;s just great!
-The resulting workflow:  
-Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
+The resulting workflow: Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
 Pre-requisite software:
  plantuml  Required plugins:
 Plug &#39;aklt/plantuml-syntax&#39; &#34; syntax hl for pumlPlug &#39;tyru/open-browser.vim&#39; &#34; hooks for opeing browserPlug &#39;weirongxu/plantuml-previewer.vim&#39; &#34; previewerIf you (like me) just love some ascii art, use the entr or similar here:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aasa.dev/posts/vim-plantuml/" />
+<meta property="og:url" content="https://aasa.dev/posts/vim-plantuml/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-12T14:09:35+01:00" />
 <meta property="article:modified_time" content="2021-02-12T14:09:35+01:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Plantuml from Vim"/>
 <meta name="twitter:description" content="Creating diagrams is a great way to communicate with others. Writing in vim is a great way to communicate with yourself.
 Combine them and it&rsquo;s just great!
-The resulting workflow:  
-Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
+The resulting workflow: Just open a plantuml file and use :PlantumlOpen to launch a live reloading browser with the preview.
 Pre-requisite software:
  plantuml  Required plugins:
 Plug &#39;aklt/plantuml-syntax&#39; &#34; syntax hl for pumlPlug &#39;tyru/open-browser.vim&#39; &#34; hooks for opeing browserPlug &#39;weirongxu/plantuml-previewer.vim&#39; &#34; previewerIf you (like me) just love some ascii art, use the entr or similar here:"/>
-<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/all.css" />
-	<title>Using Plantuml from Vim | Learning in public</title></head>
-<body><header>
+
 	
-	<div id="titletext"><h2 id="title"><a href="https://aasa.dev/">Learning in public</a></h2></div>
-	<div id="title-description"><div id="social">
-			<nav>
-				<ul></ul>
-			</nav>
-		</div>
+        <link href="https://aasa.dev/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://aasa.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css" />
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://aasa.dev/">Learning in public</a>
 	</div>
-	
+	<nav>
+		
+		
+	</nav>
 </header>
-<main><div class="post">
-	
-	<div class="author">
-	
-	</div>
-	<div class="post-header">
-	
-		<div class="meta">
-			
-			<div class="date">
-				<span class="day">12</span>
-				<span class="rest">Feb 2021</span>
-			</div>
-			
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Using Plantuml from Vim</h1>
+			<div class="meta">Posted on Feb 12, 2021</div>
 		</div>
 		
-		<div class="matter">
-			<h1 class="title">Using Plantuml from Vim</h1>
-		</div>
-	</div>
-	<div class="markdown">
-		<p>Creating diagrams is a great way to communicate with others. Writing in vim is a
+
+		<section class="body">
+			<p>Creating diagrams is a great way to communicate with others. Writing in vim is a
 great way to communicate with yourself.</p>
 <p>Combine them and it&rsquo;s just great!</p>
 <p>The resulting workflow:
-<figure>
-  <img src="/img/vim-plantuml-workflow.png" alt="vim-plantuml-workflow"  />
-</figure></p>
+<img src="/img/vim-plantuml-workflow.png" alt="vim-plantuml-workflow"></p>
 <p>Just open a plantuml file and use <code>:PlantumlOpen</code> to launch a live reloading
 browser with the preview.</p>
 <p>Pre-requisite software:</p>
@@ -82,11 +71,11 @@ browser with the preview.</p>
 <li>plantuml</li>
 </ul>
 <p>Required plugins:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;aklt/plantuml-syntax&#39;</span>             <span style="color:#75715e">&#34; syntax hl for puml</span><span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;aklt/plantuml-syntax&#39;</span>             <span style="color:#75715e">&#34; syntax hl for puml</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;tyru/open-browser.vim&#39;</span>            <span style="color:#75715e">&#34; hooks for opeing browser</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Plug</span> <span style="color:#e6db74">&#39;weirongxu/plantuml-previewer.vim&#39;</span> <span style="color:#75715e">&#34; previewer</span><span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div><p>If you (like me) just love some ascii art, use the <code>entr</code> or similar here:</p>
-<pre><code>λ find . -name comp.puml | entr cat comp.puml | plantuml -tutxt -pipe
+<pre tabindex="0"><code>λ find . -name comp.puml | entr cat comp.puml | plantuml -tutxt -pipe
 
 ,---------.   ,----------.
 |Component|   |Interface2|
@@ -102,26 +91,24 @@ browser with the preview.</p>
 '----------'
 </code></pre><p>Resources:</p>
 <ul>
-<li><a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/" target="_blank">Plantuml Hitchhikers Guide</a></li>
+<li><a href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/">Plantuml Hitchhikers Guide</a></li>
 </ul>
 
-	</div>
-	
-	
-	
-	
-	
-		
-	
-		
-		
-	</div></div>
+		</section>
 
-  </main>
-
-
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2022  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
 
 
-
-</body>
+</div>
+    </body>
 </html>
