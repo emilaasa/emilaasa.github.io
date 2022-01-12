@@ -6,7 +6,17 @@
     <description>Recent content on Learning in public</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Feb 2021 14:09:35 +0100</lastBuildDate><atom:link href="https://aasa.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Nov 2021 08:05:55 +0100</lastBuildDate><atom:link href="https://aasa.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Repeat dot command on visual selection</title>
+      <link>https://aasa.dev/posts/vim-xmap-dot/</link>
+      <pubDate>Fri, 05 Nov 2021 08:05:55 +0100</pubDate>
+      
+      <guid>https://aasa.dev/posts/vim-xmap-dot/</guid>
+      <description>Nice vim trick
+xmap &amp;lt;silent&amp;gt; . :normal .</description>
+    </item>
+    
     <item>
       <title>Using Plantuml from Vim</title>
       <link>https://aasa.dev/posts/vim-plantuml/</link>
@@ -29,43 +39,6 @@ Plug &amp;#39;aklt/plantuml-syntax&amp;#39; &amp;#34; syntax hl for pumlPlug &am
       <guid>https://aasa.dev/posts/til-pipe-into-vim/</guid>
       <description>Pipe text into Vim
 docker exec containername cat /etc/nginx/conf.d/nginx.conf | vim - </description>
-    </item>
-    
-    <item>
-      <title>Analyzing Disk-IO</title>
-      <link>https://aasa.dev/posts/analyzing-disk-io/</link>
-      <pubDate>Fri, 20 Nov 2020 06:14:41 +0100</pubDate>
-      
-      <guid>https://aasa.dev/posts/analyzing-disk-io/</guid>
-      <description>Sneaking suspicion </description>
-    </item>
-    
-    <item>
-      <title>Events in Browser</title>
-      <link>https://aasa.dev/posts/events-in-browser/</link>
-      <pubDate>Mon, 26 Oct 2020 07:54:33 +0100</pubDate>
-      
-      <guid>https://aasa.dev/posts/events-in-browser/</guid>
-      <description>What we tried
-grpc web streaming
-grpc streams are shit why
-polling rocks
-what we should maybe try instead
-stomp roll ur own
-experiments
-Streaming RPCs (Unary)11MsgMethod+HeadersHalf closeClientServerMsgStatus+TrailersHeaders
-Streaming RPCs (Streaming)12MsgMsgMsgMethod+HeadersHalf closeClientServerMsgMsgMsgStatus+TrailersHeaders Streaming RPCsrpc UnaryCall (Request) returns (Response);rpc ClientStreamingCall(stream Request) returns (Response);rpc ServerStreamingCall (Request) returns (stream Response);rpc BidirectionalCall(stream Request) returns (stream Response);13
-Streaming RPCs14Bidirectional (Bidi) Streaming
- Half duplex. Client-streaming + Server-streaming Full duplex. More that one side can send at a time Like TCP, but with messages instead of bytes(close semantics are a bit different, though) No implicit acks; writes are only acked by responses  OverviewLong-lived RPCsStreaming RPCs</description>
-    </item>
-    
-    <item>
-      <title>Log Aggregation 2019</title>
-      <link>https://aasa.dev/posts/log-aggregation-2019/</link>
-      <pubDate>Fri, 07 Jun 2019 05:45:14 +0200</pubDate>
-      
-      <guid>https://aasa.dev/posts/log-aggregation-2019/</guid>
-      <description>Overview of log aggregation options in 2019.</description>
     </item>
     
     <item>
