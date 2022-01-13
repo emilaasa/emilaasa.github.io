@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Learning in public</title>
+    <title>Posts on aasa</title>
     <link>https://aasa.dev/posts/</link>
-    <description>Recent content in Posts on Learning in public</description>
+    <description>Recent content in Posts on aasa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Nov 2021 08:05:55 +0100</lastBuildDate><atom:link href="https://aasa.dev/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -32,7 +32,7 @@ Plug &amp;#39;aklt/plantuml-syntax&amp;#39; &amp;#34; syntax hl for pumlPlug &am
     </item>
     
     <item>
-      <title>Til Pipe Into Vim</title>
+      <title>TIL: Pipe Into Vim</title>
       <link>https://aasa.dev/posts/til-pipe-into-vim/</link>
       <pubDate>Wed, 09 Dec 2020 13:22:11 +0100</pubDate>
       
