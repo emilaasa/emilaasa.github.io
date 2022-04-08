@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<meta name="generator" content="Hugo 0.91.2" />
+	<meta name="generator" content="Hugo 0.96.0" />
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>aasa | Home </title><link rel="icon" type="image/png" href=true /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
@@ -43,6 +43,31 @@
 				<div class="site-description"></div>
 				
 				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/profile-clojure-step-by-step/">Profile Clojure Step by Step</a></h1>
+					<time>Apr 8, 2022</time>
+					<br><div class="description">
+						
+						Profile in CodeScene with async-profiler:   Check that the following is set to 1: cat /proc/sys/kernel/perf_event_paranoid
+  To set it do this: echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
+  Add the following to your project.clj (if you&rsquo;re using leinigen):
+  :async-profiler {:jvm-opts [&#34;-Djdk.attach.allowAttachSelf&#34; &#34;-XX:+UnlockDiagnosticVMOptions&#34; &#34;-XX:+DebugNonSafepoints&#34;]  :dependencies [[com.clojure-goes-fast/clj-async-profiler &#34;1.0.0-alpha1&#34;]]}} Require the profiler in your ns, and add (proc/profile) around the interesting code (require '[clj-async-profiler.core :as prof])  ;; Profile the your expression: (prof/profile (dotimes [i 10000] (reduce + (range i))))&hellip;
+						
+					</div>
+					<a href="/posts/profile-clojure-step-by-step/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/refactoring-recommendations/">Refactoring Recommendations</a></h1>
+					<time>Mar 15, 2022 <span class="draft-label">DRAFT</span> </time>
+					<br><div class="description">
+						
+						 &hellip;
+						
+					</div>
+					<a href="/posts/refactoring-recommendations/">Read more ⟶</a>
+				</section>
 				
 				<section class="list-item">
 					<h1 class="title"><a href="/posts/vim-xmap-dot/">Repeat dot command on visual selection</a></h1>

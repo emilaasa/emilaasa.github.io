@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Profile Clojure Step by Step - aasa</title><link rel="icon" type="image/png" href=true /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Profile in CodeScene with async-profiler:   Check that the following is set to 1: cat /proc/sys/kernel/perf_event_paranoid
+  To set it do this: echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
+  Add the following to your project.clj (if you&rsquo;re using leinigen):
+  :async-profiler {:jvm-opts [&#34;-Djdk.attach.allowAttachSelf&#34; &#34;-XX:&#43;UnlockDiagnosticVMOptions&#34; &#34;-XX:&#43;DebugNonSafepoints&#34;]  :dependencies [[com.clojure-goes-fast/clj-async-profiler &#34;1.0.0-alpha1&#34;]]}} Require the profiler in your ns, and add (proc/profile) around the interesting code (require &#39;[clj-async-profiler.core :as prof])  ;; Profile the your expression: (prof/profile (dotimes [i 10000] (reduce &#43; (range i))))" />
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Profile Clojure Step by Step" />
+<meta property="og:description" content="Profile in CodeScene with async-profiler:   Check that the following is set to 1: cat /proc/sys/kernel/perf_event_paranoid
+  To set it do this: echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
+  Add the following to your project.clj (if you&rsquo;re using leinigen):
+  :async-profiler {:jvm-opts [&#34;-Djdk.attach.allowAttachSelf&#34; &#34;-XX:&#43;UnlockDiagnosticVMOptions&#34; &#34;-XX:&#43;DebugNonSafepoints&#34;]  :dependencies [[com.clojure-goes-fast/clj-async-profiler &#34;1.0.0-alpha1&#34;]]}} Require the profiler in your ns, and add (proc/profile) around the interesting code (require &#39;[clj-async-profiler.core :as prof])  ;; Profile the your expression: (prof/profile (dotimes [i 10000] (reduce &#43; (range i))))" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aasa.dev/posts/profile-clojure-step-by-step/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-04-08T06:08:24+02:00" />
+<meta property="article:modified_time" content="2022-04-08T06:08:24+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Profile Clojure Step by Step"/>
+<meta name="twitter:description" content="Profile in CodeScene with async-profiler:   Check that the following is set to 1: cat /proc/sys/kernel/perf_event_paranoid
+  To set it do this: echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
+  Add the following to your project.clj (if you&rsquo;re using leinigen):
+  :async-profiler {:jvm-opts [&#34;-Djdk.attach.allowAttachSelf&#34; &#34;-XX:&#43;UnlockDiagnosticVMOptions&#34; &#34;-XX:&#43;DebugNonSafepoints&#34;]  :dependencies [[com.clojure-goes-fast/clj-async-profiler &#34;1.0.0-alpha1&#34;]]}} Require the profiler in your ns, and add (proc/profile) around the interesting code (require &#39;[clj-async-profiler.core :as prof])  ;; Profile the your expression: (prof/profile (dotimes [i 10000] (reduce &#43; (range i))))"/>
+
+	
+        <link href="https://aasa.dev/css/fonts.b685ac6f654695232de7b82a9143a46f9e049c8e3af3a21d9737b01f4be211d1.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://aasa.dev/css/main.2f9b5946627215dc1ae7fa5f82bfc9cfcab000329136befeea5733f21e77d68f.css" />
+	
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://aasa.dev/">aasa</a>
+	</div>
+	<nav>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Profile Clojure Step by Step</h1>
+			<div class="meta">Posted on Apr 8, 2022</div>
+		</div>
+		
+
+		<section class="body">
+			<h1 id="profile-in-codescene-with-async-profiler">Profile in CodeScene with async-profiler:</h1>
+<ol>
+<li>
+<p>Check that the following is set to 1:
+<code>cat /proc/sys/kernel/perf_event_paranoid</code></p>
+</li>
+<li>
+<p>To set it do this:
+<code>echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid</code></p>
+</li>
+<li>
+<p>Add the following to your project.clj (if you&rsquo;re using leinigen):</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span><span style="color:#e6db74">:async-profiler</span> {<span style="color:#e6db74">:jvm-opts</span> [<span style="color:#e6db74">&#34;-Djdk.attach.allowAttachSelf&#34;</span> <span style="color:#e6db74">&#34;-XX:+UnlockDiagnosticVMOptions&#34;</span> <span style="color:#e6db74">&#34;-XX:+DebugNonSafepoints&#34;</span>]
+</span></span><span style="display:flex;"><span>                 <span style="color:#e6db74">:dependencies</span> [[com.clojure-goes-fast/clj-async-profiler <span style="color:#e6db74">&#34;1.0.0-alpha1&#34;</span>]]}}
+</span></span></code></pre></div><ol start="4">
+<li>Require the profiler in your ns, and add <code>(proc/profile)</code> around the interesting code
+<code>(require '[clj-async-profiler.core :as prof])</code></li>
+</ol>
+<p>;; Profile the your expression:
+<code>(prof/profile (dotimes [i 10000] (reduce + (range i))))</code></p>
+<ol start="5">
+<li>Inspect the result:</li>
+</ol>
+<ul>
+<li>The resulting flamegraph will be stored in <code>/tmp/clj-async-profiler/results/</code></li>
+<li>You can view the SVG directly from there or start a local webserver:
+<code>(prof/serve-files 8080)</code></li>
+</ul>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>⚡️
+	2022 
+</footer>
+
+
+</div>
+    </body>
+</html>
